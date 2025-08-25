@@ -27,11 +27,22 @@ export type GroupsList = string[]
 
 export type WeekInfo = [string,string]
 
-export type AvanceAnsInfo = [string[],Object,Object,[string,string][]]
+export type AvanceAnsInfo = [GroupsList,Object,Object,WeekInfo[]]
 
 
 export type AvanceInfo = {
   success: boolean,
   ans: AvanceAnsInfo
+  msg?: string
+}
+
+
+export type RowAsit = [string,string,string,number]
+
+export type AsistAnsInfo =[GroupsList,object,WeekInfo[]]
+
+export type AsistenciaInfo = {
+  success: boolean,
+  ans: AsistAnsInfo
   msg?: string
 }

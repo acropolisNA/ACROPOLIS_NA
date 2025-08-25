@@ -28,8 +28,17 @@ export const removeLoading = () => {
   loading.remove()
 }
 
+export const removeButton = () => {
+  const btn = doc.getElementById('btnBuscar')
+  if(!btn) return
+
+  btn.remove()
+}
+
 export const setTitle = (msg:string) => {
   const title = doc.getElementById('title')
   if(!title) return
   title.textContent = msg
 }
+
+export const genOption = (val:string,option:string) => `<option value="${val}">${option}</option>`

@@ -10,7 +10,7 @@
   <body class="font-oswald bg-neutral-200">
 
     
-    <div id="app" class="h-screen flex flex-col">
+    <div id="app" class="h-screen flex flex-col mb-5">
       <!-- TOP BAR -->
       
       <div class="bg-[#014b44] w-full p-2 sticky top-0 z-50">
@@ -25,22 +25,23 @@
 
       <div class="max-w-[60rem] mb-4 gap-5 mx-auto p-3 w-full grid grid-cols-2 ">
         <div class="h-9">
-          <input type="email" id="Email" placeholder="Email" class="p-2 text-xl mt-0.5 w-full h-full rounded border-gray-300 shadow-sm  bg-white"/>
+          <input type="email" id="email" placeholder="Email" class="p-2 text-xl mt-0.5 w-full h-full rounded border-gray-300 shadow-sm  bg-white"/>
         </div>
 
-        <div class="flex items-center gap-3 pl-5 h-9">
-          <input type="checkbox" class="size-5 rounded border-gray-300  h-full" id="Option1" />
-          <label class="font-medium text-gray-700 h-full text-xl" for="Option1"> Justificar</label>
+        <div class="flex items-center gap-3 pl-5 h-9 justify-evenly">
+          <button id="btnBuscar" class="w-1/5 mr-10 h-5/6 bg-slate-400 rounded cursor-pointer hover:scale-105 transition-all hover:text-white">Buscar</button>
+          <button id="btnJustificar" class="w-1/5 h-5/6 mr-10 bg-red-400 rounded cursor-pointer hover:scale-105 transition-all hover:text-white">Justificar</button>
+
         </div>
         
         <div class="h-9">
-          <select name="Headline" id="Headline" class="mt-0.5 w-full h-full rounded border-gray-300 bg-white shadow-sm text-xl">
+          <select name="Headline" id="grupoList" class="mt-0.5 w-full h-full rounded border-gray-300 bg-white shadow-sm text-xl">
             <option value="">Elige el grupo</option>
           </select>
         </div>
 
         <div class="h-9">
-          <select name="Headline" id="Headline" class="mt-0.5 w-full h-full rounded border-gray-300 bg-white  shadow-sm text-xl">
+          <select name="Headline" id="weekList" class="mt-0.5 w-full h-full rounded border-gray-300 bg-white  shadow-sm text-xl">
             <option value="">Elige la fecha</option>
           </select>
         </div>
@@ -70,24 +71,9 @@
               <th class="border border-gray-300 px-3 py-2">A</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="miembrosContent">
             <tr>
-              <td class="border border-gray-300 px-2 py-1 bg-white">Carlos Rodrigo</td>
-              <td class="border border-gray-300 px-2 py-1 bg-white">Condori Llerena</td>
-              <td class="border border-gray-300 px-2 py-1 bg-white underline"><a href="https://wa.me/51936664619" target="_blank">936664619</a></td>
 
-              <td class="border border-gray-300 px-2 py-1 bg-white">
-                <input type="radio" name="fila1" value="P" />
-              </td>
-              <td class="border border-gray-300 px-2 py-1 bg-white ">
-                <input type="radio" name="fila1" value="V" />
-              </td>
-              <td class="border border-gray-300 px-2 py-1 bg-white">
-                <input type="radio" name="fila1" value="J" />
-              </td>
-              <td class="border border-gray-300 px-2 py-1 bg-white">
-                <input type="radio" name="fila1" value="A" />
-              </td>
             </tr>
            
           </tbody>
@@ -97,7 +83,6 @@
       <div class="w-full max-w-[40rem] mx-auto p-2 mt-2">
         <textarea rows="2" class="bg-white w-full shadow p-2 rounded-md" placeholder="Observaciones" ></textarea>
       </div>
-      <p class="text-center mt-5 text-red-600 uppercase">Mensaje</p>
 
       <button class="rounded-md group relative inline-block overflow-hidden border border-[#014b44] px-8 py-3 focus:ring-3 focus:outline-hidden mx-auto w-40 my-3 cursor-pointer">
           <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#014b44] transition-all group-hover:h-full"></span>

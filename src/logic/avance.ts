@@ -1,5 +1,5 @@
 import { apiUrl } from "../helpers/api";
-import { addLoading, doc, removeLoading, setTitle } from "../helpers/components";
+import { addLoading, doc, genOption, removeButton, removeLoading, setTitle } from "../helpers/components";
 import { getLocal, getParams, setLocal } from "../helpers/storage";
 import type { AvanceAnsInfo, AvanceInfo } from "../helpers/types";
 
@@ -19,7 +19,6 @@ const selWeek = doc.getElementById('weekList') as HTMLSelectElement
 const selCurso = doc.getElementById('cursoList') as HTMLSelectElement
 const selTema = doc.getElementById('temaList') as HTMLSelectElement
 
-const genOption = (val:string,option:string) => `<option value="${val}">${option}</option>`
 
 // Helper set info in inputs
   const setWeekGroups = (data:[string,AvanceAnsInfo]) => {
@@ -54,7 +53,6 @@ btnBuscar.addEventListener('click',()=>{
   fetch(`${apiUrl}?type=avance&sedeId=${sede}&email=${email}`)
     .then(res => res.json())
     .then( (data:AvanceInfo) => {
-      console.log(data)
       const {success,msg,ans} = data
 
       if(!success){
@@ -62,8 +60,9 @@ btnBuscar.addEventListener('click',()=>{
         return window.alert(msg)
       }
       setWeekGroups([email,ans])
-      removeLoading()
       setLocal(dataCU,[email,ans])
+      removeLoading()
+      // removeButton()
     })
     .catch(err => console.log(err))
 })
