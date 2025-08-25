@@ -1,7 +1,7 @@
-import { apiUrl } from "../src/helpers/api";
-import { addLoading, doc, removeLoading, setTitle } from "../src/helpers/components";
-import { getLocal, getParams, setLocal } from "../src/helpers/storage";
-import type { CumplesInfo, MesCorto, RowCumple } from "../src/helpers/types";
+import { apiUrl } from "../helpers/api";
+import { addLoading, doc, removeLoading, setTitle } from "../helpers/components";
+import { getLocal, getParams, setLocal } from "../helpers/storage";
+import type { CumplesInfo, MesCorto, RowCumple } from "../helpers/types";
 
 
 const params = getParams()
