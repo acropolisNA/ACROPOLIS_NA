@@ -13,7 +13,7 @@ addLoading()
 
 const genEnlace = (idSede:string,nombre:string,encargado:string) => `
   <a 
-    href="/indice?sede=${idSede}"
+    href="/indice.html?sede=${idSede}"
     class="w-52 bg-[#F5F5F5] shadow p-4 space-y-2 rounded-md hover:-translate-y-2 duration-300 block cursor-pointer">
     <p class="text-xl text-center">${nombre}</p>
     <p class="text-sm text-center w-full text-[#014b44]">${encargado}</p>
