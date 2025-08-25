@@ -1,5 +1,5 @@
 import { apiUrl } from "../helpers/api";
-import { addLoading, doc, genOption, removeButton, removeLoading, setTitle } from "../helpers/components";
+import { addLoading, doc, genOption, removeLoading, setTitle } from "../helpers/components";
 import { getLocal, getParams, setLocal } from "../helpers/storage";
 import type { AvanceAnsInfo, AvanceInfo } from "../helpers/types";
 
