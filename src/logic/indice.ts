@@ -5,7 +5,7 @@ import { getParams } from "../helpers/storage"
 const params = getParams()
 const sede = params.get('sede') as string
 
-setTitle(sede)
+setTitle(`ÍNDICE ${sede}`)
 
 const asistLink  = doc.getElementById('asistLink') as HTMLLinkElement
 asistLink.href   = `/asistencia.html?type=asist&sede=${sede}`

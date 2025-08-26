@@ -31,25 +31,6 @@ const editSelect = (regionsData:RegionsInfo,listRegions:ListRegions) => {
   dataRegions = regionsData
 }
 
-const eventSelect = () => {
-  select.addEventListener('change', (e) => {
-    const value = (e.target as HTMLSelectElement).value
-
-    const sedes = dataRegions[value]
-    console.log(sedes)
-    if(!sedes || !sedes.length) return
-
-    let innerMenu = ''
-    for(let sede of sedes){
-      const [nombre,id,encargado] = sede
-      innerMenu += genEnlace(id,nombre,encargado)
-    }
-
-    menu.innerHTML = innerMenu
-  })
-      
-  removeLoading()
-}
 
 const local:[RegionsInfo,ListRegions] = getLocal(dataNA)
 
@@ -60,7 +41,7 @@ if(local){
 
   dataRegions = regionsData
 
-  eventSelect()
+  removeLoading()
 
 }else{
   fetch(`${apiUrl}?type=sedes`)
@@ -72,8 +53,23 @@ if(local){
       
       editSelect(regionsData,listRegions)
 
-      eventSelect()
+      removeLoading()
     })
     .catch(err => console.log(err))
 }
 
+select.addEventListener('change', (e) => {
+  const value = (e.target as HTMLSelectElement).value
+
+  const sedes = dataRegions[value]
+  console.log(sedes)
+  if(!sedes || !sedes.length) return
+
+  let innerMenu = ''
+  for(let sede of sedes){
+    const [nombre,id,encargado] = sede
+    innerMenu += genEnlace(id,nombre,encargado)
+  }
+
+  menu.innerHTML = innerMenu
+})

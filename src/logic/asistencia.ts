@@ -6,7 +6,7 @@ import type { AsistAnsInfo, AsistenciaInfo, RowAsit } from "../helpers/types";
 
 const params = getParams()
 const sede = params.get('sede') || ''
-setTitle(sede)
+setTitle(`ASISTENCIA ${sede}`)
 
 const dataAS = 'infoAsist'
 
@@ -49,7 +49,7 @@ btnBuscar.addEventListener('click',()=>{
 
   addLoading()
 
-  const email = inEmail.value
+  const email = inEmail.value.toLowerCase()
   fetch(`${apiUrl}?type=asistencia&sedeId=${sede}&email=${email}`)
     .then(res => res.json())
     .then((data:AsistenciaInfo) => {

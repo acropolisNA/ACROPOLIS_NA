@@ -10,7 +10,7 @@ const dataCU = 'infoCursos'
 const dataCursos:[string,AvanceAnsInfo] = getLocal(dataCU) //[email,info]
 let temasInfo, gruposCursos
 
-setTitle(sede)
+setTitle(`AVANCE ${sede}`)
 
 const btnBuscar = doc.getElementById('btnBuscar') as HTMLButtonElement
 const inEmail = doc.getElementById('email') as HTMLInputElement
@@ -48,7 +48,7 @@ if(dataCursos)  setWeekGroups(dataCursos)
 btnBuscar.addEventListener('click',()=>{
   if(dataCursos) return
 
-  const email = inEmail.value
+  const email = inEmail.value.toLowerCase()
   addLoading()
   fetch(`${apiUrl}?type=avance&sedeId=${sede}&email=${email}`)
     .then(res => res.json())

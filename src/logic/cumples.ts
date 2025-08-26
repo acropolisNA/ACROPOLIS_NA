@@ -21,7 +21,7 @@ const genRow = (val:RowCumple) => `
   </tr>`
 
 
-setTitle(sede)
+setTitle(`CUMPLES ${sede}`)
 
 const emailEl = doc.getElementById('email') as HTMLInputElement
 const monthEl = doc.getElementById('monthCumple') as HTMLSelectElement
@@ -42,7 +42,7 @@ monthEl?.addEventListener('change',(e)=> {
   if(dataCumples){
     genTableInfo(month)
   }else{
-    const email = emailEl.value
+    const email = emailEl.value.toLowerCase()
     if(!email|| !month ) return
 
     addLoading()

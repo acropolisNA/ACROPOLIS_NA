@@ -13,50 +13,50 @@
     <div id="app" class="h-screen flex flex-col">
       <!-- TOP BAR -->
       
-      <div class="bg-[#014b44] w-full p-2 sticky top-0 z-50">
+      <div class="bg-[#014b44] w-full p-2  z-50">
         <div class="mx-auto max-w-[60rem] h-10 flex justify-between items-center">
           <img class="h-2/3" src="/public/logo.png" alt="Logo">
-          <p id="title" class="text-white text-3xl"></p>
+          <p id="title" class="text-white text-2xl"></p>
         </div>
       </div>
       <div class="w-full h-1 bg-lime-500 mb-4"></div>
 
       <!-- MENU -->
-      <div class="h-9 w-full max-w-[40rem] mx-auto px-3 flex gap-3">
-        <input type="email" id="email" placeholder="Email" class="p-2 text-xl mt-0.5 rounded border-gray-300 shadow-sm  bg-white w-4/5"/>
-        <button id="btnBuscar" class="w-1/5 bg-slate-400 rounded cursor-pointer hover:scale-105 transition-all hover:text-white">BUSCAR</button>
+      <div class="h-12 w-full max-w-[40rem] mx-auto px-3 flex gap-3 items-center">
+        <input id="email" placeholder="Email" class="h-12 px-3 text-xl mt-0.5 rounded border-gray-300 shadow-sm  bg-white w-4/5"/>
+        <button id="btnBuscar" class="w-1/5 h-11  bg-slate-400 rounded cursor-pointer hover:scale-105 transition-all hover:text-white">BUSCAR</button>
       </div>
 
       <div class="max-w-[40rem] mb-4 gap-5 mx-auto p-3 w-full grid grid-cols-2 ">
         
-        <div class="h-9">
-          <select name="Headline" id="grupoList" class="mt-0.5 w-full h-full rounded border-gray-300 bg-white shadow-sm text-xl">
+        <div class="h-12" >
+          <select name="Headline" id="grupoList" class="px-3 mt-0.5 w-full h-full rounded border-gray-300 bg-white shadow-sm text-xl">
             <option value="">Elige el grupo</option>
           </select>
         </div>
 
-        <div class="h-9">
-          <select name="Headline" id="weekList" class="mt-0.5 w-full h-full rounded border-gray-300 bg-white  shadow-sm text-xl">
+        <div class="h-12" >
+          <select name="Headline" id="weekList" class="px-3 mt-0.5 w-full h-full rounded border-gray-300 bg-white  shadow-sm text-xl">
             <option value="">Elige la fecha</option>
           </select>
         </div>
 
-        <div class="h-9 col-span-full">
-          <select name="Headline" id="cursoList" class="mt-0.5 w-full h-full rounded border-gray-300 bg-white  shadow-sm text-xl">
+        <div class="h-12  col-span-full">
+          <select name="Headline" id="cursoList" class="px-3 mt-0.5 w-full h-full rounded border-gray-300 bg-white  shadow-sm text-xl">
             <option value="">Elige el curso</option>
           </select>
         </div>
 
-        <div class="h-9 col-span-full">
-          <select name="Headline" id="temaList" class="mt-0.5 w-full h-full rounded border-gray-300 bg-white  shadow-sm text-xl">
+        <div class="h-12  col-span-full">
+          <select name="Headline" id="temaList" class="px-3 mt-0.5 w-full h-full rounded border-gray-300 bg-white  shadow-sm text-xl">
             <option value="">Elige el tema</option>
           </select>
         </div>
 
       </div>
 
-      <div class="w-full max-w-[40rem] mx-auto p-2 mt-2">
-        <textarea rows="2" class="bg-white w-full shadow p-2 rounded-md" placeholder="Observaciones" ></textarea>
+      <div class="w-full max-w-[40rem] mx-auto p-3 mt-2">
+        <textarea rows="3" class="bg-white w-full shadow p-3 rounded-md" placeholder="Observaciones" ></textarea>
       </div>
 
       <p class="text-center mt-5 text-red-600 uppercase"></p>
