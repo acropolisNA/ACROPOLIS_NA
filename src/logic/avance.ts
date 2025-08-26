@@ -28,12 +28,12 @@ const selTema = doc.getElementById('temaList') as HTMLSelectElement
     gruposCursos = cursosGroups
     temasInfo = cursosInfo
 
-    let innerGrupo = ''
+    let innerGrupo = genOption('','Selecciona el Grupo')
     for(let grupo of listGroups){
       innerGrupo += genOption(grupo,grupo)
     }
 
-    let innerWeek = ''
+    let innerWeek = genOption('','Selecciona la Semana')
     for(let weekVal of weekList){
       const [week,limits] = weekVal
       innerWeek += genOption(week,limits)
@@ -49,6 +49,7 @@ btnBuscar.addEventListener('click',()=>{
   if(dataCursos) return
 
   const email = inEmail.value.toLowerCase()
+  if(!email) return
   addLoading()
   fetch(`${apiUrl}?type=avance&sedeId=${sede}&email=${email}`)
     .then(res => res.json())
@@ -70,8 +71,9 @@ btnBuscar.addEventListener('click',()=>{
 
 selGrupo.addEventListener('change',(e)=>{
   const grupo = (e.target as HTMLSelectElement).value 
+  if(!grupo) return
   const cursos = gruposCursos![grupo];
-  let inner = ''
+  let inner = genOption('','Selecciona el Curso')
   for(let curso of cursos){
     inner += genOption(curso,curso)
   }
@@ -81,6 +83,7 @@ selGrupo.addEventListener('change',(e)=>{
 
 selCurso.addEventListener('change',(e)=>{
   const curso = (e.target as HTMLSelectElement).value 
+  if(!curso) return
   const temas = temasInfo![curso].temas;
   console.log(temas)
   let inner = ''

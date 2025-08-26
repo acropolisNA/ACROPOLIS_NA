@@ -27,12 +27,12 @@ const listIds:string[] = []
 
     gruposInfo = groupsInfo
 
-    let innerGrupo = ''
+    let innerGrupo = genOption('','Selecciona el Grupo')
     for(let grupo of listGroups){
       innerGrupo += genOption(grupo,grupo)
     }
 
-    let innerWeek = ''
+    let innerWeek = genOption('','Selecciona la Semana')
     for(let weekVal of weekList){
       const [week,limits] = weekVal
       innerWeek += genOption(week,limits)
@@ -50,6 +50,7 @@ btnBuscar.addEventListener('click',()=>{
   addLoading()
 
   const email = inEmail.value.toLowerCase()
+  if(!email) return
   fetch(`${apiUrl}?type=asistencia&sedeId=${sede}&email=${email}`)
     .then(res => res.json())
     .then((data:AsistenciaInfo) => {
@@ -93,6 +94,7 @@ const genRow = (miembro:RowAsit) => {
 
 selGrupo.addEventListener('change',(e)=>{
   const grupo = (e.target as HTMLSelectElement).value 
+  if(!grupo) return
   const miembros = gruposInfo![grupo];
   let inner = ''
   listIds.length = 0 

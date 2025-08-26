@@ -22,7 +22,7 @@ const genOption = (region:string) => `
   <option value="${region}">${region}</option>`
 
 const editSelect = (regionsData:RegionsInfo,listRegions:ListRegions) => {
-  let innerSelect = ''
+  let innerSelect = genOption('--')
   for(let region of listRegions){
     innerSelect += genOption(region)
   }
