@@ -154,7 +154,7 @@ btnGuardar.addEventListener('click',()=>{
     resumen
   }
 
-  fetch(`${apiUrl}?type=asistencia`,{
+  fetch(`${apiUrl}?type=asistenciaPost`,{
     method:'',headers:{"Content-Type":"application/json"},body: JSON.stringify(data)
   })
   .then(res => res.json())

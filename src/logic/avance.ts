@@ -89,6 +89,7 @@ selGrupo.addEventListener('change',(e)=>{
 
 selCurso.addEventListener('change',(e)=>{
   const curso = (e.target as HTMLSelectElement).value 
+  
   if(!curso) return
   const temas = temasInfo![curso].temas;
   let inner = genOption('','Seleccione el tema')
@@ -106,7 +107,7 @@ btnGuardar.addEventListener('click',()=>{
   const week = selWeek.value
   if(!week) return window.alert('Debes seleccionar una fecha')
   const tema = selTema.value
-  if(!tema) return window.alert('Debes seleccionar un tema')
+  if(tema == '') return window.alert('Debes seleccionar un tema')
   const observaciones = txtObservaciones.value
 
 
@@ -123,17 +124,17 @@ btnGuardar.addEventListener('click',()=>{
     observaciones
   }
 
-  // return console.log(JSON.stringify(data))
+  console.log(data)
   addLoading()
 
-  fetch(`${apiUrl}?type=avance`,{
+  fetch(`${apiUrl}?type=avancePost`,{
     method:'POST',body: JSON.stringify(data,null,2)
   })
   .then(res => res.json())
   .then(data => {
     removeLoading()
-    
     const {msg,success} = data
+
     window.alert(msg)
     if(success){
       selGrupo.value = ''
