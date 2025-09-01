@@ -119,7 +119,9 @@ btnGuardar.addEventListener('click',()=>{
   if(!grupo) return window.alert('Debes seleccionar un grupo')
   const week = selWeek.value
   if(!week) return window.alert('Debes seleccionar una fecha')
-  const observaciones = txtObservaciones.value
+    const observaciones = txtObservaciones.value
+
+  addLoading()
 
   const asistVals:SimpleObj = {}
   
@@ -152,10 +154,8 @@ btnGuardar.addEventListener('click',()=>{
     resumen
   }
 
-  addLoading()
-
   fetch(`${apiUrl}?type=asistencia`,{
-    method:'POST',headers:{"Content-Type":"application/json"},body: JSON.stringify(data)
+    method:'',headers:{"Content-Type":"application/json"},body: JSON.stringify(data)
   })
   .then(res => res.json())
   .then(data => {

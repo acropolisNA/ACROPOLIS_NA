@@ -91,7 +91,7 @@ selCurso.addEventListener('change',(e)=>{
   const curso = (e.target as HTMLSelectElement).value 
   if(!curso) return
   const temas = temasInfo![curso].temas;
-  let inner = ''
+  let inner = genOption('','Seleccione el tema')
   for(let tema of temas){
     inner += genOption(tema[0],tema[1])
   }
@@ -109,6 +109,7 @@ btnGuardar.addEventListener('click',()=>{
   if(!tema) return window.alert('Debes seleccionar un tema')
   const observaciones = txtObservaciones.value
 
+
   const cursoSelected = selCurso.options[selCurso.selectedIndex]
   const cursadaId = cursoSelected.dataset.id
 
@@ -122,11 +123,16 @@ btnGuardar.addEventListener('click',()=>{
     observaciones
   }
 
+  // return console.log(JSON.stringify(data))
+  addLoading()
+
   fetch(`${apiUrl}?type=avance`,{
-    method:'POST',headers:{"Content-Type":"application/json"},body: JSON.stringify(data)
+    method:'POST',body: JSON.stringify(data,null,2)
   })
   .then(res => res.json())
   .then(data => {
+    removeLoading()
+    
     const {msg,success} = data
     window.alert(msg)
     if(success){
@@ -136,7 +142,6 @@ btnGuardar.addEventListener('click',()=>{
       selTema.value = ''
       txtObservaciones.value = ''
     }
-    removeLoading()
   })
   .catch(err => {
     console.log(err)
