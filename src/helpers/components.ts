@@ -13,7 +13,7 @@ export const addLoading = () => {
       </button>
     </div>
   `
-  loading.className = "absolute h-full w-full bg-white top-0 z-50 flex justify-center items-center opacity-90"
+  loading.className = "fixed inset-0 bg-white z-50 flex justify-center items-center opacity-90 "
   loading.id = 'loading'
 
   const body = doc.getElementById('app')

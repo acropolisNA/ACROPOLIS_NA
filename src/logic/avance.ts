@@ -53,6 +53,7 @@ btnBuscar.addEventListener('click',()=>{
   if(dataCursos) return
 
   const email = inEmail.value.toLowerCase()
+  // return console.log(email)
   if(!email) return
   addLoading()
   fetch(`${apiUrl}?type=avance&sedeId=${sede}&email=${email}`)
@@ -70,7 +71,11 @@ btnBuscar.addEventListener('click',()=>{
       removeLoading()
       // removeButton()
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      window.alert('Ups')
+      removeLoading()
+      console.log(err)
+    })
 })
 
 
@@ -124,6 +129,7 @@ btnGuardar.addEventListener('click',()=>{
     observaciones
   }
 
+  
   console.log(data)
   addLoading()
 
