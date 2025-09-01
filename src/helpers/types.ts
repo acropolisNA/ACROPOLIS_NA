@@ -46,3 +46,9 @@ export type AsistenciaInfo = {
   ans: AsistAnsInfo
   msg?: string
 }
+
+export type AsistValues = 'P' | 'V' | 'J' | 'A'
+
+export type SimpleObj = {
+  [key:string]:string
+}
