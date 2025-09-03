@@ -130,7 +130,6 @@ btnGuardar.addEventListener('click',()=>{
   }
 
   
-  console.log(data)
   addLoading()
 
   fetch(`${apiUrl}?type=avancePost`,{

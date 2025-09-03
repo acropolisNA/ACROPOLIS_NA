@@ -70,7 +70,11 @@ btnBuscar.addEventListener('click',()=>{
       // removeButton()
       
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      window.alert('Ups')
+      removeLoading()
+      console.log(err)
+    })
 })
 
 const genRow = (miembro:RowAsit) => {
