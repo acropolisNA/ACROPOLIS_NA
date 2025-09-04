@@ -53,8 +53,8 @@ btnBuscar.addEventListener('click',()=>{
   if(dataCursos) return
 
   const email = inEmail.value.toLowerCase()
-  // return console.log(email)
-  if(!email) return
+  if(!email) return window.alert('Debes ingresar tu usuario!!')
+    
   addLoading()
   fetch(`${apiUrl}?type=avance&sedeId=${sede}&email=${email}`)
     .then(res => res.json())

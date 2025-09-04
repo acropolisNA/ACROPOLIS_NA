@@ -8,8 +8,8 @@ const sede = params.get('sede') as string
 setTitle(`ÍNDICE ${sede}`)
 
 const asistLink  = doc.getElementById('asistLink') as HTMLLinkElement
-asistLink.href   = `/asistencia.html?type=asist&sede=${sede}`
+asistLink.href   = `/asistencia.html?sede=${sede}`
 const avanceLink = doc.getElementById('avanceLink') as HTMLLinkElement
-avanceLink.href  = `/avance.html?type=asist&sede=${sede}`
+avanceLink.href  = `/avance.html?sede=${sede}`
 const cumpleLink = doc.getElementById('cumpleLink') as HTMLLinkElement
-cumpleLink.href  = `/cumples.html?type=asist&sede=${sede}`
+cumpleLink.href  = `/cumples.html?sede=${sede}`

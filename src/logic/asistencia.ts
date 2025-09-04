@@ -48,10 +48,12 @@ if(dataAsist) setWeekGroups(dataAsist)
 
 btnBuscar.addEventListener('click',()=>{
   if(dataAsist) return
+  const email = inEmail.value.toLowerCase()
+  if(!email) return window.alert('Debes ingresar tu usuario!!!')
+
 
   addLoading()
 
-  const email = inEmail.value.toLowerCase()
   if(!email) return
   fetch(`${apiUrl}?type=asistencia&sedeId=${sede}&email=${email}`)
     .then(res => res.json())
